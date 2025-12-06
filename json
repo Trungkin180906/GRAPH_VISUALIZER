@@ -1,0 +1,9 @@
+{
+  "nodes": [
+    {"id": "A", "x": 100, "y": 200},
+    {"id": "B", "x": 300, "y": 150}
+  ],
+  "edges": [
+    {"source": "A", "target": "B", "weight": 5, "is_directed": false}
+  ]
+}
