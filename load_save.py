@@ -78,7 +78,7 @@ class GraphApp:#lớp quản lý giao diện đồ thị
             try:
                 u = int(entry_u.get())#entry.get lấy vb user nhập vào dạng chuỗi
                 v = int(entry_v.get())
-                w = float(entry_w.get())
+                w = int(entry_w.get())
             except:#nếu user nhập abc thay vì số thì câu lệnh sẽ in ra thông báo thay vì văng ra lỗi
                 messagebox.showerror("Lỗi", "Dữ liệu không hợp lệ!")
                 return

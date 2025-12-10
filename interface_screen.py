@@ -35,7 +35,7 @@ class LeftInterface(tk.Frame):
 
     # Phương thức mở GraphApp (tạo hàm này khi nhấn vào nút được tạo ở trên nút đó sẽ gọi đến hàm này và thực hiện)
     def open_graph_window(self):
-        from graph.load_save import GraphApp
+        from load_save import GraphApp
         win = tk.Toplevel(self)#tạo cửa sổ con mới
         win.title("Vẽ/lưu sơ đồ tòa nhà")#đặt tên cho cửa sổ con mới
         app = GraphApp(win)#khởi tạo interface trên interface main
