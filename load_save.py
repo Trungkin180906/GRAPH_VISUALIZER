@@ -1,13 +1,13 @@
 import tkinter as tk
 from tkinter import filedialog, messagebox
 import json
-from algorithms.ford_fulkerson_logic import run_ford_fulkerson_gui
-from algorithms.bfs_dfs import run_bfs_gui, run_dfs_gui
-from graph.BIPARTITE import check_bipartite_gui
-from graph.Chuyendoi import show_representations
-from algorithms.dijkstra import run_dijkstra_gui
-from algorithms.prim import run_prim_gui
-from algorithms.kruskal import run_kruskal_gui
+from ford_fulkerson_logic import run_ford_fulkerson_gui
+from bfs_dfs import run_bfs_gui, run_dfs_gui
+from BIPARTITE import check_bipartite_gui
+from Chuyendoi import show_representations
+from dijkstra import run_dijkstra_gui
+from prim import run_prim_gui
+from kruskal import run_kruskal_gui
 
 
 class GraphApp:#lớp quản lý giao diện đồ thị
