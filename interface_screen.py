@@ -1,7 +1,7 @@
 import tkinter as tk#thư viện tạo giao diện
 from tkinter import ttk#ttk cung cấp (button, lable,......)
-from algorithms.ford_fulkerson_logic import run_ford_fulkerson_gui
-from algorithms.bfs_dfs import run_bfs_gui, run_dfs_gui
+from ford_fulkerson_logic import run_ford_fulkerson_gui
+from bfs_dfs import run_bfs_gui, run_dfs_gui
 
 class LeftInterface(tk.Frame):
     def __init__(self, parent, canvas_area):
