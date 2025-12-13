@@ -1,6 +1,14 @@
 import tkinter as tk
 from tkinter import filedialog, messagebox
 import json
+from algorithms.ford_fulkerson_logic import run_ford_fulkerson_gui
+from algorithms.bfs_dfs import run_bfs_gui, run_dfs_gui
+from graph.BIPARTITE import check_bipartite_gui
+from graph.Chuyendoi import show_representations
+from algorithms.dijkstra import run_dijkstra_gui
+from algorithms.prim import run_prim_gui
+from algorithms.kruskal import run_kruskal_gui
+
 
 class GraphApp:#lớp quản lý giao diện đồ thị
     def __init__(self, root):
@@ -34,6 +42,7 @@ class GraphApp:#lớp quản lý giao diện đồ thị
 
         tk.Label(left_frame, text="").pack()  # khoảng cách
 
+
         btn_add_edge = tk.Button(left_frame, text="Thêm cạnh", width=20, command=self.add_edge_window)
         btn_add_edge.pack(pady=5)
 
@@ -42,6 +51,53 @@ class GraphApp:#lớp quản lý giao diện đồ thị
 
         btn_load = tk.Button(left_frame, text="Tải đồ thị", width=20, command=self.load_graph)
         btn_load.pack(pady=5)
+
+        tk.Label(left_frame, text="-----------").pack()
+        #tạo nút bfd
+        btn_bfs = tk.Button(left_frame, text="Duyệt đồ thị BFS \n(chiều rộng)", 
+                         width=20, bg="#ffcccc",
+                         command=self.open_bfs)
+        btn_bfs.pack(pady=5)
+        #tạo nút dfs
+        btn_dfs = tk.Button(left_frame, text="Duyệt đồ thị DFS\n(chiều sau)", 
+                         width=20, bg="#ffcccc",
+                         command=self.open_dfs)
+        btn_dfs.pack(pady=5)
+
+        btn_bipartite = tk.Button(left_frame, text="Kiểm tra đồ thị 2 phía\n(BIPARTITE)", 
+                         width=20, bg="#ffcccc",
+                         command=self.open_bipartite)
+        btn_bipartite.pack(pady=5)
+
+        #chuyển đổi giữa ma trận và danh sách
+        btn_matrix = tk.Button(left_frame, text="Chuyển đổi ma trận\n(Matrix - List)", 
+                         width=20, bg="#ffcccc",
+                         command=self.open_matrix)
+        btn_matrix.pack(pady=5)
+
+        btn_dijkstra = tk.Button(left_frame, text="Tìm đường đi ngắn nhất\n(Dijkstra)", 
+                         width=20, bg="#ffcccc",
+                         command=self.open_dijkstra)
+        btn_dijkstra.pack(pady=5)
+
+        btn_prim = tk.Button(left_frame, text="Tìm cây khung nhỏ nhất\n(Prim)", 
+                         width=20, bg="#ffcccc",
+                         command=self.open_prim)
+        btn_prim.pack(pady=5)
+
+        btn_kruskal = tk.Button(left_frame, text="Tìm cây khung nhỏ nhất\n(Kruskal)", 
+                         width=20, bg="#ffcccc",
+                         command=self.open_kruskal)
+        btn_kruskal.pack(pady=5)
+
+       
+        #tạo nút ford
+        btn_max_flow = tk.Button(left_frame, text="Tính Luồng Cực Đại\n(Ford-Fulkerson)", 
+                         width=20, bg="#ffcccc",
+                         command=self.open_max_flow)
+        btn_max_flow.pack(pady=5)
+        
+
 
     def update_direction(self):#cập nhật đồ thị có hướng
         self.is_directed = (self.graph_type.get() == "directed")#phải cập nhật lại bởi vì đồ thị đang mặc định là vô hướng
@@ -162,4 +218,30 @@ class GraphApp:#lớp quản lý giao diện đồ thị
 
             if self.is_directed:
                 self.draw_arrow(x1, y1, x2, y2)
+
+    def open_max_flow(self):
+        # Gọi hàm từ file logic, truyền dữ liệu hiện tại vào
+        run_ford_fulkerson_gui(self)
+
+    def open_bfs(self):
+        run_bfs_gui(self)
+
+    def open_dfs(self):
+        run_dfs_gui(self)
+
+    def open_bipartite(self):
+        check_bipartite_gui(self)
+
+    def open_matrix(self):
+        show_representations(self.nodes, self.edges, self.is_directed)
+
+    def open_dijkstra(self):
+        run_dijkstra_gui(self)
+
+    def open_prim(self):
+        run_prim_gui(self)
+
+    def open_kruskal(self):
+        run_kruskal_gui(self)
+
 
