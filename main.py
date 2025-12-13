@@ -1,8 +1,8 @@
 # main.py
 import tkinter as tk
-from UI.interface_screen import LeftInterface
-from UI.canvas import CanvasArea
-from graph.load_save import GraphApp
+from interface_screen import LeftInterface
+from canvas import CanvasArea
+from load_save import GraphApp
 
 class MainWindow(tk.Tk):
     def __init__(self):
