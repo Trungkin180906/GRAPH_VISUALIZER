@@ -4,7 +4,7 @@ import json
 from ford_fulkerson_logic import run_ford_fulkerson_gui
 from bfs_dfs import run_bfs_gui, run_dfs_gui
 from BIPARTITE import check_bipartite_gui
-from Chuyendoi import show_representations
+from chuyendoi import show_representations
 from dijkstra import run_dijkstra_gui
 from prim import run_prim_gui
 from kruskal import run_kruskal_gui
